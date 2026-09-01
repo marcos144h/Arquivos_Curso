@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclope | Líder dos X-Men</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #050811;
+            --card-bg: rgba(10, 18, 36, 0.9);
+            --ruby-red: #ff0033;
+            --xmen-blue: #0044cc;
+            --xmen-gold: #ffcc00;
+            --glow-red: rgba(255, 0, 51, 0.6);
+            --glow-blue: rgba(0, 68, 204, 0.5);
+            --text-light: #f0f4f8;
+            --text-dim: #8a99ad;
+            --border-color: #122444;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            background-image: radial-gradient(circle at 50% 20%, #0d1a36 0%, var(--bg-dark) 75%);
+            background-attachment: fixed;
+        }
+
+        /* BANNER PRINCIPAL COM FOTO DO CICLOPE */
+        .hero {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 3rem 2rem;
+            /* Foto do Ciclope no Banner */
+            background: linear-gradient(to top, var(--bg-dark) 10%, rgba(5, 8, 17, 0.3) 50%, rgba(5, 8, 17, 0.8) 100%), 
+                        url('https://images.alphacoders.com/849/84976.jpg') center/cover no-repeat;
+            border-bottom: 3px solid var(--ruby-red);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 850px;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            text-transform: uppercase;
+            color: var(--xmen-gold);
+            font-weight: 900;
+            letter-spacing: 5px;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 12px rgba(255, 204, 0, 0.5);
+        }
+
+        h1 {
+            font-weight: 900;
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #fff;
+            text-shadow: 0 0 20px var(--ruby-red), 0 0 40px var(--xmen-blue);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            background: rgba(5, 8, 17, 0.85);
+            padding: 1.2rem 1.8rem;
+            border-radius: 8px;
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-color);
+        }
+
+        /* CONTEÚDO PRINCIPAL */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .profile-img-container {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid var(--ruby-red);
+            box-shadow: 0 0 25px var(--glow-red);
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .profile-info h2 {
+            font-weight: 900;
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--ruby-red);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+            text-transform: uppercase;
+            font-style: italic;
+        }
+
+        .profile-info p {
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        /* CARDS COM IMAGENS RELACIONADAS */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--ruby-red);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px var(--glow-red);
+        }
+
+        .card-img-wrapper {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-img-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card h3 {
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-style: italic;
+            color: var(--xmen-gold);
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            margin-bottom: 0;
+        }
+
+        /* SEÇÃO DE CITAÇÃO */
+        .quote-section {
+            background: linear-gradient(135deg, rgba(255, 0, 51, 0.15) 0%, var(--card-bg) 100%);
+            border-left: 5px solid var(--ruby-red);
+            padding: 2.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 4rem 0;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .quote-section blockquote {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .quote-section cite {
+            color: var(--xmen-gold);
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            background: #020408;
+        }
+
+        @media (max-width: 850px) {
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+            .profile-img-container {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            h1 { font-size: 2.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO / BANNER PRINCIPAL -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">Marvel Comics • X-Men</div>
+            <h1>Ciclope</h1>
+            <p class="hero-description">
+                Scott Summers é o primeiro membro, líder de campo e estrategista mestre dos X-Men. Seus olhos emitem feixes ininterruptos de energia cinética de concussão pura, contidos apenas por seu visor de quartzo-rubi.
+            </p>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <!-- SEÇÃO DE PERFIL COM FOTO DO CICLOPE -->
+        <section class="profile-grid">
+            <div class="profile-img-container">
+                <!-- Foto em close do Ciclope com o visor aceso -->
+                <img src="https://images4.alphacoders.com/278/278149.jpg" alt="Scott Summers - Ciclope">
+            </div>
+            
+            <div class="profile-info">
+                <h2>Scott Summers</h2>
+                <p>
+                    Acolhido pelo Professor Charles Xavier na adolescência, Scott foi treinado para ser o pilar do sonho de convivência pacífica entre humanos e mutantes.
+                </p>
+                <p>
+                    Devido a um trauma de infância que o impede de controlar voluntariamente seu poder, Ciclope deve usar óculos de quartzo-rubi no dia a dia e seu visor de combate tático em missões para regular a intensidade devastadora de seus feixes.
+                </p>
+            </div>
+        </section>
+
+        <!-- CARDS DE PODERES E HABILIDADES -->
+        <section>
+            <h2 style="font-weight: 900; color: #fff; margin-bottom: 1.5rem; text-transform: uppercase; font-style: italic;">Habilidades e Táticas</h2>
+            
+            <div class="cards-grid">
+                
+                <!-- CARD 1 -->
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <!-- Imagem: Rajada Óptica -->
+                        <img src="https://images6.alphacoders.com/135/1357602.jpeg" alt="Rajada Óptica">
+                    </div>
+                    <div class="card-body">
+                        <h3>Rajada Óptica</h3>
+                        <p>Feixes de energia cinética vinda de outra dimensão que abrem buracos em montanhas e pulverizam aço. Não geram calor, apenas força física pura.</p>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <!-- Imagem: Visor de Quartzo-Rubi -->
+                        <img src="https://images.alphacoders.com/112/1125206.jpg" alt="Visor de Quartzo-Rubi">
+                    </div>
+                    <div class="card-body">
+                        <h3>Mestre Estrategista</h3>
+                        <p>Possui uma percepção de geometria espacial sobre-humana, permitindo que ele ricocheteie suas rajadas ópticas em dezenas de superfícies até atingir o alvo exato.</p>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <!-- Imagem: Liderança dos X-Men -->
+                        <img src="https://images7.alphacoders.com/135/1357604.jpeg" alt="Líder dos X-Men">
+                    </div>
+                    <div class="card-body">
+                        <h3>Liderança Nata</h3>
+                        <p>Respeitado até por seus oponentes, Scott é um comandante de batalha impecável, capaz de coordenar táticas complexas sob extrema pressão.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CITAÇÃO FAMOSA -->
+        <section class="quote-section">
+            <blockquote>
+                "Comigo, meus X-Men!"
+            </blockquote>
+            <cite>— Scott Summers / Ciclope</cite>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Cyclops Fan Page • To Me, My X-Men!</p>
+    </footer>
+
+</body>
+</html>
