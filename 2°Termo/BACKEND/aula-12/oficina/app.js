@@ -9,10 +9,12 @@ const horas = entrada.questionInt("HORAS DE SERVICO: ");
 const tempouso = entrada.questionInt("MESES DESDE O ULTIMO CONSERTO: ");
 
 const total = oficina.calcularOrcamento(peca, horas);
+const orçamentoComDesconto = oficina.calcularDesconto(total);
 const garantia = oficina.verificarGarantia(tempouso);
 
 
 console.log("\n--- RELATÓRIO DE SERVIÇO ---");
 console.log(`Orçamento: R$ ${total.toFixed(2)}`);
+console.log(`Desconto: R$ ${orçamentoComDesconto.toFixed(2)}`);
 console.log(`Status garantia: ${garantia}`);
 console.log("-----------------------------------");
