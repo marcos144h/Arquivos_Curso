@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Imóveis - Encontre seu novo lar</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Ícones para dar um toque profissional -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Cabeçalho Fixo -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-house-chimney"></i> Prime<strong>Imóveis</strong>
+            </div>
+            <nav>
+                <a href="#">Início</a>
+                <a href="#imoveis">Imóveis</a>
+                <a href="#sobre">Sobre Nós</a>
+                <a href="#contato" class="btn-nav">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção Hero / Banner Principal -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Encontre o imóvel dos seus sonhos</h1>
+            <p>As melhores oportunidades de compra, venda e locação estão aqui.</p>
+            
+            <!-- Barra de Filtro Rápido -->
+            <div class="search-bar">
+                <div class="search-group">
+                    <label><i class="fa-solid fa-building"></i> Finalidade</label>
+                    <select>
+                        <option>Comprar</option>
+                        <option>Alugar</option>
+                    </select>
+                </div>
+                <div class="search-group">
+                    <label><i class="fa-solid fa-home"></i> Tipo</label>
+                    <select>
+                        <option>Casa</option>
+                        <option>Apartamento</option>
+                        <option>Cobertura</option>
+                    </select>
+                </div>
+                <button class="btn-search">Pesquisar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Imóveis em Destaque -->
+    <section id="imoveis" class="container section-padding">
+        <div class="section-title">
+            <h2>Imóveis em Destaque</h2>
+            <p>Selecionados especialmente para você e sua família</p>
+        </div>
+
+        <div class="grid-imoveis">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-img">
+                    <span class="tag">Venda</span>
+                    <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80" alt="Casa Moderna">
+                </div>
+                <div class="card-body">
+                    <h3>Casa Moderna de Alto Padrão</h3>
+                    <p class="localizacao"><i class="fa-solid fa-location-dot"></i> Centro, Cidade - SP</p>
+                    <p class="preco">R$ 850.000</p>
+                    <ul class="features">
+                        <li><i class="fa-solid fa-bed"></i> 3 Quartos</li>
+                        <li><i class="fa-solid fa-bath"></i> 2 Banheiros</li>
+                        <li><i class="fa-solid fa-car"></i> 2 Vagas</li>
+                    </ul>
+                    <a href="#contato" class="btn-card">Tenho Interesse</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-img">
+                    <span class="tag aluguel">Locação</span>
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80" alt="Apartamento de Luxo">
+                </div>
+                <div class="card-body">
+                    <h3>Apartamento Vista para o Mar</h3>
+                    <p class="localizacao"><i class="fa-solid fa-location-dot"></i> Zona Sul, Cidade - SP</p>
+                    <p class="preco">R$ 3.500 <small>/mês</small></p>
+                    <ul class="features">
+                        <li><i class="fa-solid fa-bed"></i> 2 Quartos</li>
+                        <li><i class="fa-solid fa-bath"></i> 2 Banheiros</li>
+                        <li><i class="fa-solid fa-car"></i> 1 Vaga</li>
+                    </ul>
+                    <a href="#contato" class="btn-card">Tenho Interesse</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-img">
+                    <span class="tag">Venda</span>
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Casa de Condomínio">
+                </div>
+                <div class="card-body">
+                    <h3>Residencial Fechado Seguro</h3>
+                    <p class="localizacao"><i class="fa-solid fa-location-dot"></i> Bairro Nobre, Cidade - SP</p>
+                    <p class="preco">R$ 1.450.000</p>
+                    <ul class="features">
+                        <li><i class="fa-solid fa-bed"></i> 4 Quartos</li>
+                        <li><i class="fa-solid fa-bath"></i> 4 Banheiros</li>
+                        <li><i class="fa-solid fa-car"></i> 4 Vagas</li>
+                    </ul>
+                    <a href="#contato" class="btn-card">Tenho Interesse</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="contato" class="contact-section">
+        <div class="container contact-grid">
+            <div class="contact-info">
+                <h2>Fale com um Especialista</h2>
+                <p>Tem dúvidas sobre algum imóvel ou deseja vender sua propriedade? Nossa equipe está pronta para atender você.</p>
+                <p><i class="fa-solid fa-phone"></i> (11) 99999-9999</p>
+                <p><i class="fa-solid fa-envelope"></i> contato@primeimoveis.com.br</p>
+                <p><i class="fa-solid fa-location-dot"></i> Av. Paulista, 1000 - São Paulo, SP</p>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Seu Nome Completo" required>
+                    <input type="email" placeholder="Seu E-mail" required>
+                    <input type="tel" placeholder="Seu Telefone / WhatsApp" required>
+                    <textarea rows="4" placeholder="Escreva sua mensagem..." required></textarea>
+                    <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Prime Imóveis. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
