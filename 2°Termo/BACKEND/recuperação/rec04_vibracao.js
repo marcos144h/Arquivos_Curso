@@ -1,6 +1,5 @@
 const entrada = require("readline-sync");
-const vibracaoInformada = entrada.question("Informe o valor da vibração em mm/s: ");
-const vibracao = Number(vibracaoInformada.replace(",", "."));
+const vibracaoInformada = entrada.quest
 
 console.log(`Vibração informada: ${vibracaoInformada} mm/s`);
 
