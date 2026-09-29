@@ -9,5 +9,5 @@ if (vibracao <= 3) {
 } else if (vibracao <= 6) {
     console.log("ATENÇÃO");
 } else {
-    console.log("CRÍTICA");
+    console.log("CRITICA");
 }
