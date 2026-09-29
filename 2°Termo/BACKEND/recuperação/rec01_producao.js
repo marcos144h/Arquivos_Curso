@@ -1,10 +1,6 @@
-const entrada = require('readline-sync');
+const caixasPorHora = 75;
+const horasTrabalhadas = 8;
+const producaoTotal = caixasPorHora * horasTrabalhadas;
 
-const caixas = 75;
-const horas = 8;
-const producaototal= horas * caixas;
- 
-console.log(`---RELATORIO DE PRODUÇÃO----`)
-console.log(`caixas produzidas em por hora é ${caixas} `)
-console.log(`quantidade de horas trabalhadas é ${horas}`)
-console.log(` o total  produzido foi de ${producaototal}`)
+console.log(`----RELATORIO DE PRODUÇÃO----`)
+console.log(`A máquina produz ${caixasPorHora} caixas por hora. Em ${horasTrabalhadas} horas de trabalho, serão produzidas ${producaoTotal} caixas.`);
