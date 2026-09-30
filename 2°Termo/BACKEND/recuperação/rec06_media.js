@@ -2,7 +2,7 @@ const entrada = require("readline-sync");
 let Tempos = 0;
 
 for (let registro = 1; registro <= 6; registro++) {
-	const tempo = entrada.questionFloat(`Informe o tempo ${registro}: `);
+	const tempo = entrada.questionFloat(`digite o tempo ${registro}: `);
 	somaTempos += tempo;
 }
 
