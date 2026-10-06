@@ -1,0 +1,32 @@
+.cabesalho{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: black;
+    color: beige;
+    text-align: center;
+    padding: 10px;
+}
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+    background-color: black;
+    padding: 10px;
+    text-decoration: none;
+}
+nav a{
+    text-decoration:none ;
+    color: aliceblue;
+}
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+h1{
+    float: left;
+    padding-bottom: 10px;
+}
+.card-cafe{
+    display: flex;
+    padding-bottom: 10px;
+}
