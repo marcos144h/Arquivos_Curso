@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Contato - SuperMercado Prime</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🛒 SuperMercado Prime</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="contato.html">Contato</a>
+            <a href="carrinho.html">Carrinho (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Fale Conosco</h2>
+        <form onsubmit="enviarMensagem(event)">
+            <label>Nome:</label><br>
+            <input type="text" required><br><br>
+
+            <label>E-mail:</label><br>
+            <input type="email" required><br><br>
+
+            <label>Mensagem:</label><br>
+            <textarea required></textarea><br><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SuperMercado Prime</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

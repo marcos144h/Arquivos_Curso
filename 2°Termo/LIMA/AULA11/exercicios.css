@@ -1,0 +1,23 @@
+.grid-ex1{
+    display: grid;
+   
+  grid-template-columns: repeat(4,1fr);
+  gap: 48px;
+  list-style: none ;
+  margin: 0;
+  padding: 32px;
+  height: auto;
+  width: auto ;
+}
+
+.grid-ex2{
+display: grid;
+   
+  grid-template-columns: repeat(4,1fr);
+  gap: 48px;
+  list-style: none ;
+  margin: 0;
+  padding: 32px;
+  height: auto;
+  width: auto ;
+}

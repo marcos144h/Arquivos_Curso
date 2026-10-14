@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Produtos - SuperMercado Prime</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🛒 SuperMercado Prime</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="contato.html">Contato</a>
+            <a href="carrinho.html">Carrinho (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Nossos Produtos</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Arroz 5kg</h3>
+                <p>R$ 24,90</p>
+                <button onclick="adicionar('Arroz 5kg', 24.90)">Adicionar</button>
+            </div>
+            <div class="card">
+                <h3>Feijão 1kg</h3>
+                <p>R$ 7,50</p>
+                <button onclick="adicionar('Feijão 1kg', 7.50)">Adicionar</button>
+            </div>
+            <div class="card">
+                <h3>Leite 1L</h3>
+                <p>R$ 4,89</p>
+                <button onclick="adicionar('Leite 1L', 4.89)">Adicionar</button>
+            </div>
+            <div class="card">
+                <h3>Café 500g</h3>
+                <p>R$ 16,90</p>
+                <button onclick="adicionar('Café 500g', 16.90)">Adicionar</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SuperMercado Prime</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

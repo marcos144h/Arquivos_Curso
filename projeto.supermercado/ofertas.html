@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Ofertas - SuperMercado Prime</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🛒 SuperMercado Prime</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="contato.html">Contato</a>
+            <a href="carrinho.html">Carrinho (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>🔥 Ofertas Especiais</h2>
+        <div class="grid">
+            <div class="card promo">
+                <h3>Azeite 500ml</h3>
+                <p>De: R$ 38,00</p>
+                <p><strong>Por: R$ 28,50</strong></p>
+                <button onclick="adicionar('Azeite 500ml', 28.50)">Comprar</button>
+            </div>
+            <div class="card promo">
+                <h3>Detergente 500ml</h3>
+                <p>De: R$ 3,50</p>
+                <p><strong>Por: R$ 2,45</strong></p>
+                <button onclick="adicionar('Detergente 500ml', 2.45)">Comprar</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SuperMercado Prime</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
