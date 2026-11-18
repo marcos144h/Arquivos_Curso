@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Cabeçalho */
+.inicio {
+    background-color: #1f1f1f;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inicio h1 {
+    color: #00d4ff;
+}
+
+.navegacao {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+.navegacao a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Banner Principal */
+main {
+    padding: 50px 20px;
+    background-color: #181818;
+}
+
+.subtexto h2 {
+    margin-bottom: 10px;
+}
+
+.subtexto h4 {
+    color: #bbbbbb;
+    margin-bottom: 15px;
+}
+
+.botao {
+    list-style: none;
+}
+
+.botao li {
+    display: inline-block;
+    background-color: #00d4ff;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Galeria de Cards */
+.persolizacao-img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.cards-img {
+    list-style: none;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    width: 280px;
+    height: 180px;
+    overflow: hidden;
+}
+
+.gal-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Rodapé */
+footer {
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 20px;
+    color: #888888;
+}
