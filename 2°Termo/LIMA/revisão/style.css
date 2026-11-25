@@ -86,7 +86,7 @@ img {
 
 .galeria-img {
     display: grid;
-    /* grid-template-columns: 1fr 1fr 1fr ; */
+   
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
     grid-column: auto;
@@ -108,10 +108,7 @@ img {
     position: relative;
     overflow: hidden;
     border-radius: 14px;
-    /* width: 500px;
-    height: 500px; 
-    object-fit: contain; */
-    
+
 }
 
 .gal-img figcaption {
@@ -132,7 +129,7 @@ img {
     width: 200px;
     height: 120px;
     object-fit: contain;
-    /* contain, fill , scale-down none */
+
     object-position: center;
     scroll-snap-type: x mandatory;
     scroll-snap-align: center;

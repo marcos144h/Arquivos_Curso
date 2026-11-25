@@ -1,20 +1,21 @@
+/* Correção: substituído '-' por '*' (seletor universal) */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
 }
 
 body {
     background-color: #0d0d0d;
-    padding: 12px;
     color: #f0f0f0;
+    padding: 12px;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-/* Cabeçalho: Logo na esquerda e Navegação na direita */
 .inicio {
     background-color: #171717;
     border: 1px solid #2a2a2a;
@@ -23,39 +24,30 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    gap: 16px;
 }
 
-.inicio > a, .logo {
+.logo {
     text-decoration: none;
     color: #3f419e;
-    font-size: 18px;
     font-weight: bold;
-    letter-spacing: 0.5px;
 }
 
-.inicio > a span, .logo span {
+.logo span {
     color: #38bdf8;
 }
 
-.inicio nav, .navegacao {
-    margin-left: auto; /* Força os links para a direita */
+.navegacao {
     display: flex;
     list-style: none;
-    gap: 12px;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .navegacao a {
     color: #cccccc;
     text-decoration: none;
-    font-size: 15px;
-}
-
-.navegacao a:not(:last-child)::after,
-.navegacao li:not(:last-child)::after {
-    content: "|";
-    margin-left: 12px;
-    color: #555555;
 }
 
 .navegacao a:hover {
@@ -63,7 +55,6 @@ body {
     text-decoration: underline;
 }
 
-/* Conteúdo Principal */
 main {
     display: flex;
     flex-direction: column;
@@ -89,28 +80,13 @@ main {
     gap: 12px;
 }
 
-.texto-destaque h2 {
-    font-size: 16px;
-    color: #ffffff;
-}
-
 .texto-destaque p {
-    font-size: 15px;
     color: #bbbbbb;
 }
 
 .botao {
-    background-color: #38bdf8;
-    color: #0d0d0d;
+    color: #38bdf8;
     font-weight: bold;
-    padding: 8px 16px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-.botao:hover {
-    background-color: #7dd3fc;
 }
 
 .imagem-destaque img {
@@ -118,17 +94,15 @@ main {
     height: 120px;
     object-fit: cover;
     border-radius: 8px;
-    border: 1px solid #333333;
+    max-width: 100%;
 }
 
 .imagem-destaque figcaption {
-    font-size: 12px;
     color: #999999;
     margin-top: 4px;
 }
 
-/* Galeria de Cards */
-.lista-cards, .galeria {
+.galeria {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -153,40 +127,81 @@ main {
     border-radius: 12px;
 }
 
-.card figcaption, .card p {
-    font-size: 15px;
+.card figcaption {
     font-weight: bold;
-    color: #f0f0f0;
 }
 
-/* Rodapé */
 footer {
     background-color: #171717;
     border: 1px solid #2a2a2a;
     border-radius: 8px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
 }
 
 .rodape-links {
-    list-style: none;
     display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
-}
-
-.rodape-links li:not(:last-child)::after {
-    content: "|";
-    margin-left: 12px;
-    color: #555555;
 }
 
 .rodape-links a {
     color: #cccccc;
     text-decoration: none;
-    font-size: 15px;
 }
 
 .rodape-links a:hover {
     color: #ffffff;
     text-decoration: underline;
+}
+
+.aviso-ia {
+    color: #888888;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .inicio {
+        flex-direction: column;
+        padding: 16px 20px;
+    }
+
+    .destaque {
+        flex-direction: column;
+        padding: 25px 16px;
+        gap: 20px;
+    }
+
+    .imagem-destaque img {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Celulares (telas até 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 8px;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .navegacao,
+    .rodape-links {
+        gap: 12px;
+    }
 }

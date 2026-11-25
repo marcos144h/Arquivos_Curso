@@ -1,78 +1,80 @@
+-- Active: 1794917670332@@127.0.0.1@3308@recuperacao_retrogame
 -- active: 1794917670332@@127.0.0.1@3308@recuperacao_retrogame
-drop database if exists recuperacao_retrogame;
-create database if not exists recuperacao_retrogame;
-use recuperacao_retrogame;
+DROP DATABASE nome_do_banco;
+DROP DATABASE IF EXISTS recuperacao_retrogame;
+CREATE DATABASE IF NOT EXISTS recuperacao_retrogame;
+USE recuperacao_retrogame;
 
-create table plataforma (
-    id_plataforma int auto_increment,
-    nome varchar(80) not null unique,
+CREATE TABLE plataforma (
+    id_plataforma INT AUTO_INCREMENT,
+    nome VARCHAR(80) NOT NULL UNIQUE,
 
-    constraint pk_plataforma primary key (id_plataforma)
+    CONSTRAINT pk_plataforma PRIMARY KEY (id_plataforma)
 );
 
-create table categoria (
-    id_categoria int auto_increment,
-    descricao varchar(80) not null unique,
+CREATE TABLE categoria (
+    id_categoria INT AUTO_INCREMENT,
+    descricao VARCHAR(80) NOT NULL UNIQUE,
 
-    constraint pk_categoria primary key (id_categoria)
+    CONSTRAINT pk_categoria PRIMARY KEY (id_categoria)
 );
 
-create table cliente (
-    id_cliente int auto_increment,
-    nome varchar(100) not null,
-    email varchar(120) not null default true,
-    telefone varchar(20) null,
-    ativo boolean default true,
+CREATE TABLE cliente (
+    id_cliente INT AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(120) NOT NULL DEFAULT TRUE,
+    telefone VARCHAR(20) NULL,
+    ativo BOOLEAN DEFAULT TRUE,
 
-    constraint pk_cliente primary key (id_cliente),
-    constraint uq_email unique (email)
+    CONSTRAINT pk_cliente PRIMARY KEY (id_cliente),
+    CONSTRAINT uq_email UNIQUE (email)
 );
 
-create table jogo (
-    id_jogo int auto_increment,
-    titulo varchar(150) not null,
-    codigo varchar(15) not null unique,
-    ano_lancamento int not null,
-    quantidade_disponivel int default 0 check (quantidade_disponivel >=0),
-    id_plataforma int,
-    id_categoria int,
+CREATE TABLE jogo (
+    id_jogo INT AUTO_INCREMENT,
+    titulo VARCHAR(150) NOT NULL,
+    codigo VARCHAR(15) NOT NULL UNIQUE,
+    ano_lancamento INT NOT NULL,
+    quantidade_disponivel INT DEFAULT 0 CHECK (quantidade_disponivel >= 0),
+    id_plataforma INT,
+    id_categoria INT,
 
-    constraint pk_jogo primary key (id_jogo),
-    constraint fk_plataforma foreign key (id_plataforma) references plataforma (id_plataforma),
-    constraint fk_categoria foreign key (id_categoria) references categoria(id_categoria)
+    CONSTRAINT pk_jogo PRIMARY KEY (id_jogo),
+    CONSTRAINT fk_plataforma FOREIGN KEY (id_plataforma) REFERENCES plataforma (id_plataforma),
+    CONSTRAINT fk_categoria FOREIGN KEY (id_categoria) REFERENCES categoria (id_categoria)
 );
 
-create table locacao (
-    id_locacao int auto_increment,
-    data_retirada datetime default current_timestamp,
-    data_prevista date not null,
-    data_devolucao date null,
-    status_locacao varchar(20) default 'aberta' check (status_locacao in ('aberta','devolvida','atrasada')),
-    id_cliente int,
-    id_jogo int,
+CREATE TABLE locacao (
+    id_locacao INT AUTO_INCREMENT,
+    data_retirada DATETIME DEFAULT CURRENT_TIMESTAMP,
+    data_prevista DATE NOT NULL,
+    data_devolucao DATE NULL,
+    status_locacao VARCHAR(20) DEFAULT 'aberta' CHECK (status_locacao IN ('aberta','devolvida','atrasada')),
+    id_cliente INT,
+    id_jogo INT,
 
-    constraint pk_locacao primary key (id_locacao),
-    constraint fk_cliente foreign key (id_cliente) references plataforma (id_plataforma),
-    constraint fk_jogo foreign key (id_jogo) references jogo (id_jogo)
+    CONSTRAINT pk_locacao PRIMARY KEY (id_locacao),
+    CONSTRAINT fk_cliente FOREIGN KEY (id_cliente) REFERENCES plataforma (id_plataforma),
+    CONSTRAINT fk_jogo FOREIGN KEY (id_jogo) REFERENCES jogo (id_jogo)
 );
 
-alter table jogo add desenvolvedora varchar(100);
+ALTER TABLE jogo ADD desenvolvedora VARCHAR(100);
 
-insert into cliente (nome,email,telefone,ativo) values 
-('marcos','marcos@gmail.com','1234567',true),
-('vinicio','vincio@gmail.com','12345678',true),
-('leo','leo@gmail.com','1234567',true),
-('nicolas','nicolasgmaail.com',null,true);
+INSERT INTO cliente (nome,email,telefone,ativo) VALUES 
+('marcos','marcos@gmail.com','1234567',TRUE),
+('vinicio','vincio@gmail.com','12345678',TRUE),
+('leo','leo@gmail.com','1234567',TRUE),
+('nicolas','nicolasgmaail.com',NULL,TRUE);
 
-insert into plataforma (nome) values
+INSERT INTO plataforma (nome) VALUES
 ('pc'),
 ('ps4');
 
-insert into categoria (descricao) values
+INSERT INTO categoria (descricao) VALUES
 ('rpg'),
 ('ação');
 
-insert into jogo (titulo,codigo,ano_lancamento,quantidade_disponivel) values
+INSERT INTO jogo (titulo,codigo,ano_lancamento,quantidade_disponivel) VALUES
 ('zelda','jog-001',1999,1),
 ('gta','jog-002',2013, 8),
 ('mario','jog-003',2018,22),
@@ -80,51 +82,53 @@ insert into jogo (titulo,codigo,ano_lancamento,quantidade_disponivel) values
 ('sonic','jog-005',2015,30),
 ('gta 4','jog-006',2013,45);
 
-insert into locacao (data_retirada,data_prevista,data_devolucao,status_locacao,id_cliente,id_jogo) values
-(now(),'2026-11-17',null,'aberta',1,1),
-(now(),'2026-11-17',null,'aberta',1,2),
-(now(),'2026-11-17',null,'aberta',2,3);
+INSERT INTO locacao (data_retirada,data_prevista,data_devolucao,status_locacao,id_cliente,id_jogo) VALUES
+(NOW(),'2026-11-17',NULL,'aberta',1,1),
+(NOW(),'2026-11-17',NULL,'aberta',1,2),
+(NOW(),'2026-11-17',NULL,'aberta',2,3);
 
-update jogo
-set quantidade_disponivel = quantidade_disponivel - 1
-where id_jogo = 3;
+UPDATE jogo
+SET quantidade_disponivel = quantidade_disponivel - 1
+WHERE id_jogo = 3;
 
-select * from locacao;
+SELECT * FROM locacao;
 
-update cliente
-set telefone = '123456789'
-where id_cliente = 1;
+UPDATE cliente
+SET telefone = '123456789'
+WHERE id_cliente = 1;
 
-update jogo
-set quantidade_disponivel = quantidade_disponivel + 2
-where ano_lancamento >= 2000;
+UPDATE jogo
+SET quantidade_disponivel = quantidade_disponivel + 2
+WHERE ano_lancamento >= 2000;
 
-insert into cliente (nome, email, telefone, ativo) values 
-('gabrielgoldenboy','gabriel goldenboy@gmail.com','123456543',true);
+INSERT INTO cliente (nome, email, telefone, ativo) VALUES 
+('marcos','gabriel ''marcos@gmail.com','123456543',TRUE);
 
-delete from cliente
-where id_cliente = 5;
+DELETE FROM cliente
+WHERE id_cliente = 5;
 
-delete from cliente
-where id_cliente = 1;
+DELETE FROM cliente
+WHERE id_cliente = 1;
 
-select titulo, ano_lancamento, quantidade_disponivel from jogo;
+SELECT titulo, ano_lancamento, quantidade_disponivel FROM jogo;
 
-select * from jogo
-where `quantidade_disponivel` >= 2
-order by `quantidade_disponivel` desc;
+SELECT * FROM jogo
+WHERE `quantidade_disponivel` >= 2
+ORDER BY `quantidade_disponivel` DESC;
 
-select titulo
-from jogo
-where titulo like '%god%'
+SELECT titulo
+FROM jogo
+WHERE titulo LIKE '%god%';
 
-select * from jogo 
-where ano_lancamento between 1990 and 2005;
+SELECT * FROM jogo 
+WHERE ano_lancamento BETWEEN 1990 AND 2005;
 
-select 
-count(quantidade_disponivel) as total_jogo, 
-sum(quantidade_disponivel) as soma_quantidade,
-avg(quantidade_disponivel) as media_quantidade, 
-min(quantidade_disponivel) as menor_quantidade, 
-max(quantidade_disponivel) as maior_quantidade
-from jogo;
+SELECT 
+COUNT(quantidade_disponivel) AS total_jogo, 
+SUM(quantidade_disponivel) AS soma_quantidade,
+AVG(quantidade_disponivel) AS media_quantidade, 
+MIN(quantidade_disponivel) AS menor_quantidade, 
+MAX(quantidade_disponivel) AS maior_quantidade
+FROM jogo;
+
+
